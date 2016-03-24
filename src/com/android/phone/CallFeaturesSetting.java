@@ -1341,6 +1341,8 @@ public class CallFeaturesSetting extends PreferenceActivity
 
         Preference wifiCallingSettings = findPreference(
                 getResources().getString(R.string.wifi_calling_settings_key));
+        prefSet.removePreference(wifiCallingSettings);
+        /*
         if (!ImsManager.isWfcEnabledByPlatform(mPhone.getContext())) {
             prefSet.removePreference(wifiCallingSettings);
         } else {
@@ -1363,6 +1365,7 @@ public class CallFeaturesSetting extends PreferenceActivity
             }
             wifiCallingSettings.setSummary(resId);
         }
+        */
     }
 
     @Override

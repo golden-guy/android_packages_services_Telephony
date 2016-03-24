@@ -49,8 +49,12 @@ public class ImsUtil {
      * @return {@code true} if WFC is supported by the platform and has been enabled by the user.
      */
     public static boolean isWfcEnabled(Context context) {
+        /*
         boolean isEnabledByPlatform = ImsManager.isWfcEnabledByPlatform(context);
         boolean isEnabledByUser = ImsManager.isWfcEnabledByUser(context);
+        */
+        boolean isEnabledByPlatform = false;
+        boolean isEnabledByUser = false;
         if (DBG) Log.d(LOG_TAG, "isWfcEnabled :: isEnabledByPlatform=" + isEnabledByPlatform);
         if (DBG) Log.d(LOG_TAG, "isWfcEnabled :: isEnabledByUser=" + isEnabledByUser);
         return isEnabledByPlatform && isEnabledByUser;
@@ -61,8 +65,10 @@ public class ImsUtil {
      * enabled, this will return {@code false}.
      */
     public static boolean isWfcModeWifiOnly(Context context) {
-        boolean isWifiOnlyMode =
+        boolean isWifiOnlyMode = true;
+        /*
                 ImsManager.getWfcMode(context) == ImsConfig.WfcModeFeatureValueConstants.WIFI_ONLY;
+        */
         if (DBG) Log.d(LOG_TAG, "isWfcModeWifiOnly :: isWifiOnlyMode" + isWifiOnlyMode);
         return isWfcEnabled(context) && isWifiOnlyMode;
     }
